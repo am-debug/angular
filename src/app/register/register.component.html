@@ -1,0 +1,24 @@
+<div fxLayoutAlign="center center" fxFlexFill  clas="main-div">
+    <mat-card fxFlex="25">
+        <mat-toolbar color="primary">Register Page</mat-toolbar>
+        <form  fxLayoutAlign="stretch" fxLayout="column" class="login-form" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <input matInput placeholder="Nom" name="nom"  [(ngModel)]="user.nom" type="text" required>
+                <span ng-show="myForm.nom.$touched && myForm.nom.$invalid">Le nom est requis.</span>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Prenom" name="prenom"  [(ngModel)]="user.prenom" type="text" required>
+                <span ng-show="myForm.prenom.$touched && myForm.prenom.$invalid">Le prenom est requis.</span>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Username" name="username"  [(ngModel)]="user.username" type="text" required>
+                <span ng-show="myForm.username.$touched && myForm.username.$invalid">le username est requis.</span>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password"  [(ngModel)]="user.password" name="password" required>
+                <span ng-show="myForm.password.$touched && myForm.password.$invalid">le mot de passe est requis.</span>
+            </mat-form-field>
+            <button mat-raised-button type="submit" class="mt-5" color="primary">Register</button>
+        </form>
+    </mat-card>
+</div>
