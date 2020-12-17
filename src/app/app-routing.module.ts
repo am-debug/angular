@@ -7,6 +7,8 @@ import { AdminComponent } from './admin/admin.component';
 import { ApprenantComponent } from './apprenant/apprenant.component';
 import { CMComponent } from './cm/cm.component';
 import { FormateurComponent } from './formateur/formateur.component';
+import { ProfilComponent } from './profil/profil.component';
+import { AjoutprofilComponent } from './ajoutprofil/ajoutprofil.component';
 
 const routes: Routes = [
   {path:'register', component:RegisterComponent},
@@ -15,7 +17,10 @@ const routes: Routes = [
   {path:'Apprenant', component:ApprenantComponent},
   {path:'CM', component:CMComponent},
   {path:'Formateur', component:FormateurComponent},
+  {path:'Profil', component:ProfilComponent},
+  {path:'Ajoutprofil', component:AjoutprofilComponent},
   {path:'', component:LoginComponent},
+  
 ];
 
 @NgModule({

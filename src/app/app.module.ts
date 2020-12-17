@@ -21,6 +21,21 @@ import { CMComponent } from './cm/cm.component';
 import { FormateurComponent } from './formateur/formateur.component';
 import { AdminComponent } from './admin/admin.component';
 import { ApprenantComponent } from './apprenant/apprenant.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import {MatListModule} from '@angular/material/list';
+import { ProfilComponent } from './profil/profil.component';
+import { AjoutprofilComponent } from './ajoutprofil/ajoutprofil.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { EditprofilComponent } from './editprofil/editprofil.component';
+
+
 
 
 @NgModule({
@@ -32,7 +47,16 @@ import { ApprenantComponent } from './apprenant/apprenant.component';
     CMComponent,
     FormateurComponent,
     AdminComponent,
-    ApprenantComponent
+    ApprenantComponent,
+    HeaderComponent,
+    FooterComponent,
+    SidenavComponent,
+    ProfilComponent,
+    AjoutprofilComponent,
+    EditprofilComponent,
+   
+    
+   
   ],
   imports: [
     BrowserModule,
@@ -45,14 +69,21 @@ import { ApprenantComponent } from './apprenant/apprenant.component';
     MatCardModule,
     MatToolbarModule,
     HttpClientModule,
-    
+    MatIconModule,
+    MatMenuModule,
+    MatDialogModule,
     FormsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: function  tokenGetter() {
              return localStorage.getItem('TOKEN_KEY');}
       }
-    })
+    }),
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatListModule
+   
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
   bootstrap: [AppComponent]

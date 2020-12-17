@@ -26,6 +26,7 @@ passwordIsvalide:boolean;
         if (roles.includes("ROLE_Apprenant")) {
         this.auth.getUser().subscribe(
           data=>{console.log(data)
+          
             var {archived} = JSON.parse(JSON.stringify(data));
             if (!archived ) {
               // redirection vers la formulaire d'inscriptio
@@ -43,7 +44,7 @@ passwordIsvalide:boolean;
       }else if(roles.includes("ROLE_Formateur")){
          // redirection vers la page accueil formateur
         this.router.navigateByUrl('/Formateur');
-      }else if(roles.includes("ROLE_CM")){
+      }else if(roles.includes("ROLE_Cm")){
          // redirection vers la page accueil CM
         this.router.navigateByUrl('/CM');
       }else if(roles.includes("ROLE_ADMIN")){

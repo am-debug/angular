@@ -12,7 +12,7 @@ export class AuthentificationService {
 
   constructor(private http:HttpClient) { }
   public login(username:string, password:string): Observable<any>{
-    return this.http.post('https://127.0.0.1:8000/api/login', {username, password}).pipe(tap(token =>{
+    return this.http.post('http://127.0.0.1:8000/api/login', {username, password}).pipe(tap(token =>{
     localStorage.clear();  
     return this.saveToken(token.token);
     }));
@@ -25,12 +25,12 @@ export class AuthentificationService {
   }
   
   public getUser(): Observable<any> {           
-    return this.http.get('https://127.0.0.1:8000/api/apprenant').pipe(tap(data =>{
+    return this.http.get('http://127.0.0.1:8000/api/apprenant').pipe(tap(data =>{
     return data;
 }));
 }
 public updateApprenant(user:any): Observable<any>{
-  return this.http.post('https://127.0.0.1:8000/api/admin/user', user).pipe(tap(data =>{
+  return this.http.post('http://127.0.0.1:8000/api/admin/user', user).pipe(tap(data =>{
     return data;
   }));
 }

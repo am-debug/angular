@@ -1,0 +1,11 @@
+<div fxLayoutAlign="center center" fxFlexFill  clas="main-div">
+    <mat-card fxFlex="90">
+<form class="example-form" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+    
+    <input matInput placeholder="libelle" name="libelle" [(ngModel)]="user.libelle" type="text" required >
+    
+  </mat-form-field>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button type="submit" class="mt-5" color="primary">Update</button>
+</form>
